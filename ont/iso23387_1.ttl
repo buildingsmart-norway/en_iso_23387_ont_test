@@ -1,0 +1,111 @@
+@prefix iso12006_3: <http://www.iso.org/iso_12006_3_V16#> .
+@prefix ont: <http://www.iso.org/en_iso_23387_1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ont: a owl:Ontology .
+
+ont:GenericProperty iso12006_3:is_documented_in iso12006_3:xtdRelDocuments ;
+    iso12006_3:is_part_of_collection iso12006_3:xtdRelCollects .
+
+ont:Quanity iso12006_3:has_units iso12006_3:xtdRelAssignsUnits .
+
+ont:Unit rdfs:label "Unit"@en ;
+    iso12006_3:is_unit_of iso12006_3:xtdRelAssignsUnits ;
+    rdfs:subClassOf iso12006_3:xtdMeasureWithUnit .
+
+iso12006_3:xtdSpecificProperty rdfs:subClassOf iso12006_3:xtdProperty .
+
+ont:Quantity rdfs:label "Quantity"@en ;
+    iso12006_3:has_values iso12006_3:xtdRelAssignsValues ;
+    iso12006_3:is_measure_for iso12006_3:xtdRelAssignsMeasures ;
+    rdfs:subClassOf iso12006_3:xtdMeasureWithUnit .
+
+ont:ReferenceDocument rdfs:label "Reference Document"@en ;
+    iso12006_3:documents iso12006_3:xtdRelDocuments ;
+    rdfs:subClassOf iso12006_3:xtdExternalDocument .
+
+iso12006_3:xtdRelAssignsCollections iso12006_3:RelatedCollections ont:ReferenceDocument ;
+    iso12006_3:RelatingObject ont:ConstructionWorksEntity .
+
+iso12006_3:xtdRelAssignsUnits iso12006_3:RelatedUnits ont:Unit ;
+    iso12006_3:RelatingMeasure ont:Quanity .
+
+iso12006_3:xtdRelAssignsValues iso12006_3:RelatedValues ont:Value ;
+    iso12006_3:RelatingMeasure ont:Quantity .
+
+iso12006_3:xtdRelSpecializesProperty iso12006_3:RelatedObjects ont:SpecificProperty ;
+    iso12006_3:RelatingObject ont:GeneralProperty ;
+    rdfs:subClassOf iso12006_3:xtdSpecializes .
+
+ont:ConstructionWorksEntity rdfs:label "Construction Works Entity"@en ;
+    iso12006_3:has_collection iso12006_3:xtdRelAssignsCollections ;
+    iso12006_3:has_parametric_properties iso12006_3:xtdRelAssignsPropertyWithValues ;
+    iso12006_3:is_composed_of iso12006_3:xtdRelComposes ;
+    iso12006_3:is_documented_in iso12006_3:xtdRelDocuments ;
+    rdfs:subClassOf iso12006_3:xtdSubject .
+
+ont:DataTemplate rdfs:label "Data Template"@en ;
+    iso12006_3:has_members iso12006_3:xtdRelCollects ;
+    iso12006_3:is_collection_of_mixed_objects_for iso12006_3:xtdRelAssignsCollections ;
+    iso12006_3:is_composed_of iso12006_3:xtdRelComposes ;
+    iso12006_3:is_documented_in iso12006_3:xtdRelDocuments ;
+    rdfs:subClassOf iso12006_3:xtdBag .
+
+ont:GroupOfProperties rdfs:label "Group Of Properties"@en ;
+    iso12006_3:has_members iso12006_3:xtdRelCollects ;
+    iso12006_3:is_documented_in iso12006_3:xtdRelDocuments ;
+    iso12006_3:is_part_of_collection iso12006_3:xtdRelCollects ;
+    rdfs:subClassOf iso12006_3:xtdNest .
+
+ont:Value rdfs:label "Value"@en ;
+    iso12006_3:is_parametric_value_of iso12006_3:xtdRelAssignsPropertyWithValues ;
+    iso12006_3:is_value_of iso12006_3:xtdRelAssignsValues ;
+    rdfs:subClassOf iso12006_3:xtdValue .
+
+iso12006_3:xtdRelAssignsMeasures iso12006_3:RelatedMeasures ont:Quantity ;
+    iso12006_3:RelatingProperty ont:GeneralProperty,
+        ont:SpecificProperty .
+
+ont:GeneralProperty rdfs:label "General Property"@en ;
+    iso12006_3:has_measures iso12006_3:xtdRelAssignsMeasures ;
+    iso12006_3:has_parametric_value iso12006_3:xtdRelAssignsPropertyWithValues ;
+    iso12006_3:is_composed_of iso12006_3:xtdRelComposes ;
+    iso12006_3:is_supertype_of iso12006_3:xtdRelSpecializesProperty ;
+    rdfs:subClassOf iso12006_3:xtdProperty .
+
+iso12006_3:xtdRelAssignsPropertyWithValues iso12006_3:RelatedObjects ont:ConstructionWorksElement ;
+    iso12006_3:RelatedProperty ont:GeneralProperty,
+        ont:SpecificProperty ;
+    iso12006_3:RelatedValues ont:Value .
+
+iso12006_3:xtdRelComposes iso12006_3:RelatingObject ont:ConstructionWorksEntity,
+        ont:DataTemplate,
+        ont:GeneralProperty,
+        ont:SpecificProperty .
+
+iso12006_3:xtdRelCollects iso12006_3:ReatingCollection ont:GroupOfProperties ;
+    iso12006_3:RelatedThings ont:DataTemplate,
+        ont:GenericProperty,
+        ont:SpecificProperty ;
+    iso12006_3:RelatingCollection ont:GroupOfProperties .
+
+ont:SpecificProperty rdfs:label "Specific Property"@en ;
+    iso12006_3:has_measures iso12006_3:xtdRelAssignsMeasures ;
+    iso12006_3:has_parametric_value iso12006_3:xtdRelAssignsPropertyWithValues ;
+    iso12006_3:is_composed_of iso12006_3:xtdRelComposes ;
+    iso12006_3:is_documented_in iso12006_3:xtdRelDocuments ;
+    iso12006_3:is_part_of_collection iso12006_3:xtdRelCollects ;
+    iso12006_3:is_sub_type_of iso12006_3:xtdRelSpecializesProperty ;
+    rdfs:subClassOf iso12006_3:xtdSpecificProperty .
+
+iso12006_3:xtdRelDocuments iso12006_3:RelatedObjects ont:ConstructionWorksEntity,
+        ont:DataTemplate,
+        ont:GroupOfProperties,
+        ont:SpecificProperty,
+        ont:Value ;
+    iso12006_3:RelatingDocument ont:ReferenceDocument .
+

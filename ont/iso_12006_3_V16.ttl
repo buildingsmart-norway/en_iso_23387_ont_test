@@ -1,0 +1,1432 @@
+# baseURI: http://www.iso.org/iso_12006_3_V16
+
+@prefix :        <http://www.iso.org/iso_12006_3_V16#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.iso.org/iso_12006_3_V16>
+      rdf:type owl:Ontology ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+:BOOLEAN
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:Comments
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdLanguage ;
+      rdfs:range :xtdText .
+
+:Concept
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot .
+
+:ContextOwners
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdContext ;
+      rdfs:range :xtdUser .
+
+:ContextUsers
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdContext ;
+      rdfs:range :xtdUser .
+
+:CreatedDate
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdlabel .
+
+:DbUserName
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdlabel .
+
+:Description
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdDescription ;
+      rdfs:range :xtdText .
+
+:Descriptions
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdDescription .
+
+:Email
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdlabel .
+
+:Illustrates
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdIllustration ;
+      rdfs:range :xtdRoot .
+
+:Illustration
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdIllustration ;
+      rdfs:range :xtdMedia .
+
+:IsContextFor
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdContext ;
+      rdfs:range :xtdRelationship .
+
+:IsLexemeFor
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdLexeme ;
+      rdfs:range :xtdName .
+
+:IsRestricted
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdContext ;
+      rdfs:range :BOOLEAN .
+
+:LanguageCode
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdLanguage ;
+      rdfs:range :xtdlabel .
+
+:LanguageName
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdLanguageRepresentation ;
+      rdfs:range :xtdLanguage .
+
+:LanguageNameInEnglish
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdLanguage ;
+      rdfs:range :xtdlabel .
+
+:LanguageNameInSelf
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdLanguage ;
+      rdfs:range :xtdlabel .
+
+:LowerTolerance
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdValue ;
+      rdfs:range :xtdText .
+
+:Maintains
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdOrganization ;
+      rdfs:range :xtdRoot .
+
+:Members
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdOrganization ;
+      rdfs:range :xtdUser .
+
+:MethodOfInterpretation
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsMeasures ;
+      rdfs:range :xtdName .
+
+:MimeType
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdIllustration ;
+      rdfs:range :xtdMimeType .
+
+:Name
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdlabel .
+
+:Names
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdName .
+
+:NominalValue
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdValue ;
+      rdfs:range :xtdText .
+
+:PreferenceOwner
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdOrganization .
+
+:PreferredRepresentations
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdLanguageRepresentation .
+
+:RelatedActivities
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelSequences ;
+      rdfs:range :xtdActivity .
+
+:RelatedCollections
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsCollections ;
+      rdfs:range :xtdCollection .
+
+:RelatedMeasures
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsMeasures ;
+      rdfs:range :xtdMeasureWithUnit .
+
+:RelatedObjects
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssociates ;
+      rdfs:range :xtdObject .
+
+:RelatedProperties
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdProperty .
+
+:RelatedProperty
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsPropertyWithValues ;
+      rdfs:range :xtdProperty .
+
+:RelatedThings
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelCollects ;
+      rdfs:range :xtdRoot .
+
+:RelatedUnits
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsUnits ;
+      rdfs:range :xtdUnit .
+
+:RelatedValues
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsPropertyWithValues ;
+      rdfs:range :xtdValue .
+
+:RelatingActivity
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelSequences ;
+      rdfs:range :xtdActivity .
+
+:RelatingCollection
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelCollects ;
+      rdfs:range :xtdCollection .
+
+:RelatingDocument
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelDocuments ;
+      rdfs:range :xtdExternalDocument .
+
+:RelatingMeasure
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsUnits ;
+      rdfs:range :xtdMeasureWithUnit .
+
+:RelatingObject
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelationship ;
+      rdfs:range :xtdObject .
+
+:RelatingProperty
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelAssignsMeasures ;
+      rdfs:range :xtdProperty .
+
+:RoleName
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdRole ;
+      rdfs:range :xtdlabel .
+
+:Status
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdStatusEnum .
+
+:ToleranceType
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdValue ;
+      rdfs:range :xtdToleranceTypeEnum .
+
+:URL  rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdOrganization ;
+      rdfs:range :xtdlabel .
+
+:UniqueID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdGlobalUniqueID .
+
+:UnitComponent
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdMeasureWithUnit ;
+      rdfs:range :xtdUnit .
+
+:UpperTolerance
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdValue ;
+      rdfs:range :xtdText .
+
+:UserRights
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdRole ;
+      rdfs:range :BOOLEAN .
+
+:UserRole
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdRole .
+
+:ValueDomain
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdMeasureWithUnit ;
+      rdfs:range :xtdValue .
+
+:ValueRole
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdValue ;
+      rdfs:range :xtdValueRoleEnum .
+
+:ValueType
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdValue .
+
+:VersionDate
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdDate .
+
+:VersionID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdVersionID .
+
+:ViewSelector
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelationship ;
+      rdfs:range :xtdName .
+
+:documents
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdExternalDocument ;
+      rdfs:range :xtdRelDocuments ;
+      owl:inverseOf :RelatingDocument .
+
+:has_actors
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatingObject .
+
+:has_collections
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      owl:inverseOf :RelatingObject .
+
+:has_context
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRelationship ;
+      rdfs:range :xtdContext ;
+      owl:inverseOf :IsContextFor .
+
+:has_group_members
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdRelGroups ;
+      owl:inverseOf :RelatingObject .
+
+:has_illustrations
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdIllustration ;
+      owl:inverseOf :Illustrates .
+
+:has_lexeme
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :xtdName ;
+      rdfs:range :xtdLexeme .
+
+:has_measures
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdProperty ;
+      rdfs:range :xtdMeasureWithUnit ;
+      owl:inverseOf :RelatingProperty .
+
+:has_members
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdCollection ;
+      rdfs:range :xtdRelCollects ;
+      owl:inverseOf :RelatingCollection .
+
+:has_owners
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdContext ;
+      owl:inverseOf :ContextOwners .
+
+:has_parametric_properties
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatingObject .
+
+:has_parametric_values
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdProperty ;
+      rdfs:range :xtdRelAssignsPropertyWithValues ;
+      owl:inverseOf :RelatedProperty .
+
+:has_preferences
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdOrganization ;
+      rdfs:range :xtdRelPreferred ;
+      owl:inverseOf :PreferenceOwner .
+
+:has_preferred_representations
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdRelPreferred ;
+      owl:inverseOf :Concept .
+
+:has_properties
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatingObject .
+
+:has_units
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdMeasureWithUnit ;
+      rdfs:range :xtdRelAssignsUnits ;
+      owl:inverseOf :RelatingMeasure .
+
+:has_users
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdContext ;
+      owl:inverseOf :ContextUsers .
+
+:has_values
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdMeasureWithUnit ;
+      rdfs:range :xtdRelAssignsValues ;
+      owl:inverseOf :RelatingMeasure .
+
+:is_acting_on
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatedObjects .
+
+:is_collection_of_mixed_objects_for
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdBag ;
+      rdfs:range :xtdRelAssignsCollections ;
+      owl:inverseOf :RelatedCollections .
+
+:is_collection_of_similar_objects_for
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdNest ;
+      rdfs:range :xtdRelAssignsCollections ;
+      owl:inverseOf :RelatedCollections .
+
+:is_composed_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      owl:inverseOf :RelatingObject .
+
+:is_description_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdDescription ;
+      rdfs:range :xtdRoot ;
+      owl:inverseOf :Descriptions .
+
+:is_documented_in
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatedObjects .
+
+:is_maintained_by
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdOrganization ;
+      owl:inverseOf :Maintains .
+
+:is_measure_for
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdMeasureWithUnit ;
+      rdfs:range :xtdRelAssignsMeasures ;
+      owl:inverseOf :RelatedMeasures .
+
+:is_member_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdUser ;
+      rdfs:range :xtdOrganization ;
+      owl:inverseOf :Members .
+
+:is_name_of
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :Names .
+
+:is_parametric_value_for
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdValue ;
+      owl:inverseOf :RelatedValues .
+
+:is_part_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatedObjects .
+
+:is_part_of_collection
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdRoot ;
+      rdfs:range :xtdRelCollects ;
+      owl:inverseOf :RelatedThings .
+
+:is_part_of_group
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatedObjects .
+
+:is_preferred_for
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdLanguageRepresentation ;
+      rdfs:range :xtdRelPreferred ;
+      owl:inverseOf :PreferredRepresentations .
+
+:is_property_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdProperty ;
+      rdfs:range :xtdRelAssignsProperties ;
+      owl:inverseOf :RelatedProperties .
+
+:is_subtype_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatedObjects .
+
+:is_supertype_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdObject ;
+      rdfs:range :xtdObject ;
+      owl:inverseOf :RelatingObject .
+
+:is_unit_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdUnit ;
+      rdfs:range :xtdRelAssignsUnits ;
+      owl:inverseOf :RelatedUnits .
+
+:is_value_of
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdValue ;
+      rdfs:range :xtdRelAssignsValues ;
+      owl:inverseOf :RelatedValues .
+
+:next_activities
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdActivity ;
+      rdfs:range :xtdRelSequences .
+
+:previous_activities
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :xtdActivity ;
+      rdfs:range :xtdRelSequences .
+
+:xtdActivity
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :next_activities ;
+                owl:someValuesFrom :xtdRelSequences
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :previous_activities ;
+                owl:someValuesFrom :xtdRelSequences
+              ] .
+
+:xtdActor
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject .
+
+:xtdBag
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdCollection ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_collection_of_mixed_objects_for ;
+                owl:someValuesFrom :xtdRelAssignsCollections
+              ] .
+
+:xtdCollection
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRoot ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_members ;
+                owl:someValuesFrom :xtdRelCollects
+              ] .
+
+:xtdComment
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdDescription .
+
+:xtdContext
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRoot ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :BOOLEAN ;
+                owl:onProperty :IsRestricted ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdUser ;
+                owl:onProperty :ContextOwners
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :ContextUsers ;
+                owl:someValuesFrom :xtdUser
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdRelationship ;
+                owl:onProperty :IsContextFor
+              ] .
+
+:xtdDate
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdDefinition
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdDescription .
+
+:xtdDescription
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdLanguageRepresentation ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_description_of ;
+                owl:someValuesFrom :xtdRoot
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdText ;
+                owl:onProperty :Description ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdExternalDocument
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :documents ;
+                owl:someValuesFrom :xtdRelDocuments
+              ] .
+
+:xtdFullName
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdName .
+
+:xtdGlobalUniqueID
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdIllustration
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdLanguageRepresentation ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdMimeType ;
+                owl:onProperty :MimeType ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdMedia ;
+                owl:onProperty :Illustration ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdRoot ;
+                owl:onProperty :Illustrates
+              ] .
+
+:xtdLanguage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdText ;
+                owl:onProperty :Comments
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdGlobalUniqueID ;
+                owl:onProperty :UniqueID ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :LanguageNameInSelf
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :LanguageNameInEnglish ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdLanguageRepresentation
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_preferred_for ;
+                owl:someValuesFrom :xtdRelPreferred
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdGlobalUniqueID ;
+                owl:onProperty :UniqueID ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdLanguage ;
+                owl:onProperty :LanguageName ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdLexeme
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdName ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdName ;
+                owl:onProperty :IsLexemeFor
+              ] .
+
+:xtdMeasureWithUnit
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_values ;
+                owl:someValuesFrom :xtdRelAssignsValues
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_units ;
+                owl:someValuesFrom :xtdRelAssignsUnits
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_measure_for ;
+                owl:someValuesFrom :xtdRelAssignsMeasures
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :ValueDomain ;
+                owl:someValuesFrom :xtdValue
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdUnit ;
+                owl:onProperty :UnitComponent
+              ] .
+
+:xtdMedia
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdMimeType
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdName
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdLanguageRepresentation ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_name_of ;
+                owl:someValuesFrom :xtdRoot
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdLexeme ;
+                owl:onProperty :has_lexeme
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :Name ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdNest
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdCollection ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_collection_of_similar_objects_for ;
+                owl:someValuesFrom :xtdRelAssignsCollections
+              ] .
+
+:xtdObject
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRoot ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_collections ;
+                owl:someValuesFrom :xtdRelAssignsCollections
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_subtype_of ;
+                owl:someValuesFrom :xtdRelSpecializes
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_actors ;
+                owl:someValuesFrom :xtdRelActsUpon
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_acting_on ;
+                owl:someValuesFrom :xtdRelActsUpon
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_supertype_of ;
+                owl:someValuesFrom :xtdRelSpecializes
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_parametric_properties ;
+                owl:someValuesFrom :xtdRelAssignsPropertyWithValues
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_part_of ;
+                owl:someValuesFrom :xtdRelComposes
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_properties ;
+                owl:someValuesFrom :xtdRelAssignsProperties
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_part_of_group ;
+                owl:someValuesFrom :xtdRelGroups
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_composed_of ;
+                owl:someValuesFrom :xtdRelComposes
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_documented_in ;
+                owl:someValuesFrom :xtdRelDocuments
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_group_members ;
+                owl:someValuesFrom :xtdRelGroups
+              ] .
+
+:xtdOrganization
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_preferences ;
+                owl:someValuesFrom :xtdRelPreferred
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdGlobalUniqueID ;
+                owl:onProperty :UniqueID ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdUser ;
+                owl:onProperty :Members
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :URL ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :Name ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdRoot ;
+                owl:onProperty :Maintains
+              ] .
+
+:xtdProperty
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_property_of ;
+                owl:someValuesFrom :xtdRelAssignsProperties
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_parametric_values ;
+                owl:someValuesFrom :xtdRelAssignsPropertyWithValues
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_measures ;
+                owl:someValuesFrom :xtdRelAssignsMeasures
+              ] .
+
+:xtdRelActsUpon
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelAssociates .
+
+:xtdRelAssignsCollections
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdCollection ;
+                owl:onProperty :RelatedCollections
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdObject ;
+                owl:onProperty :RelatingObject ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdRelAssignsMeasures
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdName ;
+                owl:onProperty :MethodOfInterpretation ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdProperty ;
+                owl:onProperty :RelatingProperty ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdMeasureWithUnit ;
+                owl:onProperty :RelatedMeasures
+              ] .
+
+:xtdRelAssignsProperties
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdObject ;
+                owl:onProperty :RelatingObject ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdProperty ;
+                owl:onProperty :RelatedProperties
+              ] .
+
+:xtdRelAssignsPropertyWithValues
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdValue ;
+                owl:onProperty :RelatedValues
+              ] ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdObject ;
+                owl:onProperty :RelatingObject ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdProperty ;
+                owl:onProperty :RelatedProperty ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdRelAssignsUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :RelatedUnits ;
+                owl:someValuesFrom :xtdUnit
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdMeasureWithUnit ;
+                owl:onProperty :RelatingMeasure ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdRelAssignsValues
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdValue ;
+                owl:onProperty :RelatedValues
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdMeasureWithUnit ;
+                owl:onProperty :RelatingMeasure ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdRelAssociates
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdObject ;
+                owl:onProperty :RelatingObject ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdObject ;
+                owl:onProperty :RelatedObjects
+              ] .
+
+:xtdRelCollects
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdCollection ;
+                owl:onProperty :RelatingCollection ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdRoot ;
+                owl:onProperty :RelatedThings
+              ] .
+
+:xtdRelComposes
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelAssociates .
+
+:xtdRelDocuments
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdExternalDocument ;
+                owl:onProperty :RelatingDocument ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdObject ;
+                owl:onProperty :RelatedObjects
+              ] .
+
+:xtdRelGroups
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelAssociates .
+
+:xtdRelPreferred
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdOrganization ;
+                owl:onProperty :PreferenceOwner ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdRoot ;
+                owl:onProperty :Concept ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdLanguageRepresentation ;
+                owl:onProperty :PreferredRepresentations
+              ] .
+
+:xtdRelSequences
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelationship ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdActivity ;
+                owl:onProperty :RelatedActivities
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdActivity ;
+                owl:onProperty :RelatingActivity ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdRelSpecializes
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRelAssociates .
+
+:xtdRelationship
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdRoot ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdContext ;
+                owl:onProperty :has_context
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdName ;
+                owl:onProperty :ViewSelector
+              ] .
+
+:xtdRole
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "3"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :BOOLEAN ;
+                owl:onProperty :UserRights
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :RoleName ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdRoot
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_maintained_by ;
+                owl:someValuesFrom :xtdOrganization
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_part_of_collection ;
+                owl:someValuesFrom :xtdRelCollects
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdGlobalUniqueID ;
+                owl:onProperty :UniqueID ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdName ;
+                owl:onProperty :Names
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_preferred_representations ;
+                owl:someValuesFrom :xtdRelPreferred
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :Descriptions ;
+                owl:someValuesFrom :xtdDescription
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdDate ;
+                owl:onProperty :VersionDate
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :has_illustrations ;
+                owl:someValuesFrom :xtdIllustration
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdStatusEnum ;
+                owl:onProperty :Status ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdOrganization ;
+                owl:onProperty :PreferenceOwner ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdVersionID ;
+                owl:onProperty :VersionID
+              ] .
+
+:xtdShortName
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdName .
+
+:xtdStatusEnum
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdSubject
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject .
+
+:xtdText
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdToleranceTypeEnum
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdUnit
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_unit_of ;
+                owl:someValuesFrom :xtdRelAssignsUnits
+              ] .
+
+:xtdUser
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdContext ;
+                owl:onProperty :has_owners
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_member_of ;
+                owl:someValuesFrom :xtdOrganization
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass :xtdContext ;
+                owl:onProperty :has_users
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdDate ;
+                owl:onProperty :CreatedDate ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onClass :xtdRole ;
+                owl:onProperty :UserRole ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :DbUserName ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :Name ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onDataRange :xtdlabel ;
+                owl:onProperty :Email ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+:xtdValue
+      rdf:type owl:Class ;
+      rdfs:subClassOf :xtdObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_value_of ;
+                owl:someValuesFrom :xtdRelAssignsValues
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdText ;
+                owl:onProperty :NominalValue
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdValueRoleEnum ;
+                owl:onProperty :ValueRole
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdText ;
+                owl:onProperty :UpperTolerance
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdText ;
+                owl:onProperty :LowerTolerance
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdValueTypeEnum ;
+                owl:onProperty :ValueType
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :is_parametric_value_for ;
+                owl:someValuesFrom :xtdRelAssignsPropertyWithValues
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onDataRange :xtdToleranceTypeEnum ;
+                owl:onProperty :ToleranceType
+              ] .
+
+:xtdValueRoleEnum
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdValueTypeEnum
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdVersionID
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
+
+:xtdlabel
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdfs:Datatype .
